@@ -1,0 +1,8 @@
+<div class="container-main" [ngClass]="{'active': modalService.showModal()}">
+    <div [ngClass]="{backdrop:modalService.showModal()}"></div>
+    <div class="card" [ngClass]="{open:modalService.showModal()}">
+        <shared-modal></shared-modal>
+    </div>
+</div>
+<router-outlet></router-outlet>
+

@@ -1,0 +1,54 @@
+.main-dialog {
+  padding: 20px 25px 20px 25px;
+  font-size: 0.75rem;
+  
+}
+
+button {
+    font-size: 0.75rem;
+    width:100%;
+}
+
+.red-border {
+    color:red; 
+}
+
+.input-error {
+  border-color:red;
+}
+
+.input-normal {
+  border-color:none;
+}
+
+.card {
+  border-radius:10px;
+}
+
+.btn-gray{
+  background-color: #989899;
+  border-color:1px solid #989899;
+}
+
+.btn-outline-purple{
+  background-color: #ffff;
+  border-color:#d26afa;
+  outline-color: #d26afa;
+}
+
+.btn-outline-purple:hover{
+  background-color: #d26afa;
+  border-color: #d26afa;
+  outline-color: #d26afa;
+  box-shadow:0 0 0 0.2rem rgba(162, 40, 218, 0.46)
+}
+
+.btn-outline-purple:active,
+.btn-outline-purple:focus{
+  box-shadow:0 0 0 0.2rem rgba(162, 40, 218, 0.46)
+}
+
+.btn-purple {
+  background-color: #d26afa;
+  color: #ffff;
+}

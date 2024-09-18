@@ -1,0 +1,26 @@
+
+    <table class="table table-bordered" >
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th style="width:20%">Contact Number</th>
+      <th>Email Address</th>
+      <th style="width:5%">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of contactObj">
+      <td class="p-10 mx-15 fw-semibold"><a class="cname" [routerLink]="(['details',item.id])">{{item.contactname}}</a></td>
+      <td class="p-10 mx-15 fw-semibold">{{item.contactnumber}}</td>
+      <td class="p-10 mx-15 fw-semibold">{{item.contactemail}}</td>
+      <td>
+        <span class="justify-content-evenly d-flex">
+            <i class="ion-edit pointer" (click)="Edit(item)"></i>
+            &nbsp;
+            <i class="ion-trash-b pointer"></i>
+        </span>
+    
+      </td>
+    </tr>
+  </tbody>
+</table>

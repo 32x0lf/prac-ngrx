@@ -1,0 +1,113 @@
+<div class="card">
+    <div class="main-dialog">
+      <form [formGroup]="form" (ngSubmit)="submit()" style="width:300px;padding:10px 10px;">
+        <fieldset class="mb-3 form-group">
+          <label for="" class="form-label fw-bold">Name</label>
+          <input
+            type="text"
+            class="form-control form-control-md"
+            [ngClass]="{
+              'input-error':
+                form.controls['name'].touched && form.controls['name'].errors
+            }"
+            formControlName="name"
+           
+          />
+          <div
+            *ngIf="
+              form.controls['name'] &&
+              (form.controls['name'].dirty || form.controls['name'].touched)
+            "
+            class="red-border"
+          >
+            <div *ngIf="form.controls['name'].errors?.['required']">
+              Please enter contact name.
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="mb-3 form-group">
+          <label for="" class="form-label fw-bold">Contact Number</label>
+          <input
+            type="text"
+            class="form-control form-control-md"
+            formControlName="phnumber"
+            [maxlength]="11"
+            [ngClass]="{
+              'input-error':
+                form.controls['phnumber'].touched &&
+                form.controls['phnumber'].errors
+            }"
+            onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+          />
+          <div
+            *ngIf="
+              form.controls['phnumber'] &&
+              (form.controls['phnumber'].dirty ||
+                form.controls['phnumber'].touched)
+            "
+            class="red-border"
+          >
+            <div *ngIf="form.controls['phnumber'].errors?.['required']">
+              Please enter a contact number.
+            </div>
+            <div *ngIf="form.controls['phnumber'].errors?.['minlength']">
+              Contact number must be at least 11 digits.
+            </div>
+            <div *ngIf="form.controls['phnumber'].errors?.['pattern']">
+              Contact number must be valid.
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="mb-3 form-group">
+          <label for="" class="form-label fw-bold">Email Address</label>
+          <input
+            type="email"
+            class="form-control form-control-md"
+            formControlName="email"
+            [ngClass]="{
+              'input-error':
+                form.controls['email'].touched && form.controls['email'].errors
+            }"
+        
+          />
+          <div
+            *ngIf="
+              form.controls['email'] &&
+              (form.controls['email'].dirty || form.controls['email'].touched)
+            "
+            class="red-border"
+          >
+            <div *ngIf="form.controls['email'].errors?.['required']">
+              Please enter contact email address.
+            </div>
+            <div *ngIf="form.controls['email'].errors?.['pattern']">
+              Please enter a valid email address.
+            </div>
+          </div>
+        </fieldset>
+        <div class="row mt-4 mx-1">
+          <div class="col-md-6 p-1">
+            <button
+              type="button"
+              class="btn btn-outline-purple round-pill"
+              (click)="closeModal(false)"
+            >
+              Cancel
+            </button>
+          </div>
+          <div class="col-md-6 p-1">
+            <button
+              type="submit"
+              class="btn btn-primary round-pill"
+              [ngClass]="{'btn-gray':form.invalid,'btn-purple':form.valid}"
+              [disabled]="form.invalid"
+            >
+              {{ submitBtnStr }}
+            </button>
+          
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

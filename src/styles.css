@@ -1,0 +1,146 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/cdk/overlay-prebuilt.css';
+
+.spacer {
+  top: 0;
+  margin-top: 20px;
+}
+
+.button-right {
+  float: right;
+  bottom: 0;
+}
+
+.round-pill {
+  border-radius: 20px;
+}
+
+button.btn:active {
+  border-color: red;
+}
+
+button.btn{
+  border-color:#d26afa;
+}
+button.btn:hover{
+  border-color:#d26afa;
+}
+
+button.btn-purple {
+  background-color: #d26afa;
+  color: #ffff;
+}
+
+.btn-purple:hover {
+   background-color: #d86cfc;
+}
+
+button.btn-purple:hover {
+  color: #ffff;
+  box-shadow:0 0 0 0.2rem rgba(162, 40, 218, 0.46)
+}
+
+.btn-purple:active,
+.btn-purple:focus{
+  box-shadow:0 0 0 0.2rem rgba(162, 40, 218, 0.46)
+}
+
+
+.container-page {
+  padding:5px;
+}
+
+.ionicons {
+    float:right;
+    padding:2px;
+}
+
+.icon-color{
+  color: #8b8b8f;
+  font-size:14px;
+}
+
+.pointer {
+    cursor:pointer;
+}
+
+.main-page {
+    display:flex;
+    margin-top: 50px;
+    justify-content: flex-start;
+   
+}
+
+.m-l-icons {
+    margin-left:10px;
+}
+
+thead,th {
+    justify-content: space-evenly;
+    background: #4e0078;
+    padding:12px;
+    color:#fff;
+    font-size: 14px;
+    
+}
+
+tbody, td {
+    justify-content: space-evenly;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.card-shadow{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 3px; 
+    width:100%;
+    padding: 10px 14px;
+    background-color:#ebebed;
+    border:1px solid #99999c;
+}
+
+.card-shadow:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+ .card-title {
+    color:#d26afa;
+    border:1px solid red;
+  }
+  
+  .card-name {
+    font-size:12px;
+  }
+  .card-email{
+    font-size:12px;
+    margin:0px;
+  }
+
+  .cname{
+    text-decoration: none;
+    color:black;
+  }
+
+  .cname:hover{
+    color:#d26afa
+  }
+
+  .card-phnumber{
+    font-size:14px;
+  }
+
+  @media screen and (max-width:850px) {
+    .card-shadow{
+        padding:2px 2px;
+    }
+  }
+
+  @media screen and (max-width:400px) {
+    .card-shadow{
+        padding:2px 2px;
+        width:100%;
+    }
+
+    
+  }

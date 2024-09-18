@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row spacer">
+      <h4 class="fw-bold">Contacts Information</h4>
+      <div class="col-md-6">
+        <p>
+          Your list of contacts appear here. To add a new contact, click on the
+          Add New Contact button.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <div class="button-right">
+          <button type="button" class="btn btn-md btn-purple round-pill"(click)="AddContact()">
+            Add New Contact
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="container-page">
+      <div>
+        <div class="ionicons pointer">
+          <i class="ion-navicon-round m-l-icons" [ngClass]="{'icon-color':!isListView}" (click)="viewOpt(false)"></i>
+        </div>
+        <div class="ionicons pointer">
+          <i class="ion-grid m-l-icons" [ngClass]="{'icon-color':isListView}" (click)="viewOpt(true)"></i>
+        </div>
+      </div>
+      
+      <div class="main-page" *ngIf="data$ | async as cdata">
+            <ng-container
+              *ngIf="isListView; then listview; else tableview"
+            ></ng-container>
+  
+            <ng-template #listview>
+              <div class="row">
+                <div class="col-md-4 col-sm-12" style="padding-right:4px;padding-left:0px" *ngFor="let obj of cdata.contacts">
+                  <app-listview [data]="obj" style="width:100%">
+                  </app-listview> 
+                </div>
+                
+              </div>
+                    
+            </ng-template>
+  
+            <ng-template #tableview>
+                  <app-tableview [data]="cdata.contacts" style="width:100%"></app-tableview>      
+            </ng-template>
+      </div>
+    </div>
+  </div>
